@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS</title>
+    <link href="./Esscss.css" rel="stylesheet" type="text/css">
+    <style>
+        <!--
+            a:link{font-size: 20px;color: black;text-decoration: none}
+            a:hover{font-size: 30px;color:yellow;text-decoration: none}
+            a:active{font-size: 45px;color: red;text-decoration: none}
+            a:visited{font-size: 50px;color: blue;text-decoration: underline}
+            -->
+         div{
+            border：5px solid black;
+             width: 500px;
+             height: 500px;
+             font-size: 30px;
+             background-color: red;
+             margin: 20px;
+             padding: 10px;
+         }
+        #header{width: 1000px;
+             height: 100px;
+             background-color: red;
+            }
+        #main{width: 1000px;
+             height: 600px;
+             background-color: red;
+            }
+        #footer{width: 1000px;
+             height: 100px;
+             background-color: red;
+            }
+        #left{width: 33%;
+             height: 600px;
+             background-color:aqua;
+             float: left;
+             margin: auto;
+            }
+        #middle{width: 33%;
+             height: 600px;
+             background-color:gray;
+             margin: auto;
+        }
+        #right{
+            width: 33%;
+             height: 600px;
+             background-color:orange;
+             float: right;
+             margin: auto;
+        }
+        body{
+            background-image:url(https://img0.baidu.com/it/u=2580741452,3037220932&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800);
+
+        }
+        <!-- 
+            h1.left{text-align:left;color:red;font-family: 隶书;font-size: 38px;}
+            h1.center{text-align:center;color:green;font-family: 隶书;font-size: 38px;}
+            h2{color:blue;font-family: 宋体;font-size: 38px;}
+            -->
+            #note {color: aquamarine;font-size: 38px;font-family: 楷体;}
+    </style>
+    
+</head>
+<body>
+    <a href="#锚点">点击伪类锚点</a>
+    <h1 class="left">这是左对齐的类选择符</h1>
+    <h1 class="center">这是居中的类选择符</h1>
+    <h2>这是元素选择符</h2>
+    <h1 id="note">这是id选择符</h1>
+    <h3 style="color:bisque;font-size: 38px;font-family: 楷体;">这是内嵌样式</h3>
+    <p>这是外部样式</p>
+    <div>这是div盒子</div>
+    <div id="header">这里是header层</div>
+    <div id="main">
+        <div id="left">第一列</div>
+        <div id="right">第三列</div>
+        <div id="middle">第二列</div>
+    </div>
+    <div id="footer">这里是footer层</div>
+    <a name="锚点">这里是锚点伪类</a>
+</body>
+</html>
