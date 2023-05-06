@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            box-shadow: 20px 20px 40px black;
+        }
+        #a{ 
+            width: 500px;
+            height: 500px;
+            border-radius: 200px 200px 200px 200px;
+        }
+        #b.c:hover{
+            transition: width 2s;
+            width: 300px;
+        }
+        #b.d:hover{
+            transform: rotateY(180deg);
+            transition-duration: 2s
+        }
+    </style>
+</head>
+<body>
+    <audio src="yee.mp3" controls loop></audio>
+    <br/>
+    <video controls width="700" height="500">
+        <source src="yeee.mp4">
+    </video>
+    <br/>
+    请输入邮箱：<br/>
+    <input type="email">
+    <input type="submit"><br/>
+    请输入生日：<br/>
+    <input type="date" name="bday">
+    <input type="submit"><br/>
+    请输入年龄：<br/>
+    <input type="number" name="quantity" min="0" max="200">
+    <input type="submit"><br/>
+    &nbsp;<br> 
+    &nbsp;<br> 
+    <div id="a" align="center">
+        圆角矩形
+    </div>
+    &nbsp;<br> 
+    &nbsp;<br> 
+    <div id="b" class="c">
+        2d
+    </div>
+    &nbsp;<br> 
+    &nbsp;<br> 
+    <div id="b" class="d">
+        3d
+    </div>
+</body>
+</html>
