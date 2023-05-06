@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script type="text/javascript">
+        function Acc(){
+            var sum=0;
+        for(var i=1;i<=100;i++){
+            sum+=i;
+        }
+        document.write(sum);
+        }
+        function run(){
+            var y=prompt("请输入年份：","");
+            if(y%100==0){
+                if(y%400==0){
+                    document.write("是闰年")
+                }
+            }
+            else
+            if(y%4==0){
+                document.write("是闰年")
+            }
+            else{
+                document.write("不是闰年")
+            }
+
+        }
+
+function helloChinese() {
+  return "你好";
+}
+
+
+function helloEnglish() {
+  return "Hello";
+}
+
+
+function sayHello(helloFun) {
+    document.write(helloFun());
+    }
+
+
+    </script>
+</head>
+<body>
+    1到100的和是：</br>
+    <script type="text/javascript">
+        Acc();
+    </script></br>
+    <script type="text/javascript">
+        run();
+    </script></br>
+    <script type="text/javascript">
+        sayHello(helloChinese);
+    </script></br>
+    <script type="text/javascript">
+        sayHello(helloEnglish);
+    </script></br>
+</body>
+</html>
