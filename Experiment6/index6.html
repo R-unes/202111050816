@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>动态初始化网页</title>
+	<style>
+		table, td, th {
+			border: 1px solid black;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body onload="initPage()">
+	<h1>当前时间：<span id="currentTime"></span></h1>
+	<table id="myTable">
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+		</tr>
+	</table>
+	<button onclick="addRow()">添加行</button>
+	<button onclick="showDialog()">提交</button>
+	<p id="myText" onclick="toggleVisibility()">点击显示/隐藏本文本框及其子孙</p>
+	<div id="myDiv" onmousemove="showPosition(event)">
+		鼠标移动位置 x: <span id="posX"></span>, y: <span id="posY"></span>
+	</div>
+	<button onclick="addImage()">添加图片</button>
+	<button onclick="deleteImage()">删除图片</button>
+	<script>
+		function initPage() {
+			var now = new Date();
+			var timeStr = now.getFullYear() + "-" + (now.getMonth()+1) + "-" + now.getDate() + " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+			document.getElementById("currentTime").innerHTML = timeStr;
+			var data = [
+				{"name": "张三", "age": 20, "gender": "男"},
+				{"name": "李四", "age": 25, "gender": "女"},
+				{"name": "王五", "age": 30, "gender": "男"}
+			];
+
+			var table = document.getElementById("myTable");
+			for (var i = 0; i < data.length; i++) {
+				var tr = document.createElement("tr");
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				var td3 = document.createElement("td");
+				td1.innerHTML = data[i].name;
+				td2.innerHTML = data[i].age;
+				td3.innerHTML = data[i].gender;
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				table.appendChild(tr);
+			}
+		}
+
+		function addRow() {
+			var table = document.getElementById("myTable");
+			var tr = document.createElement("tr");
+			var td1 = document.createElement("td");
+			var td2 = document.createElement("td");
+			var td3 = document.createElement("td");
+			td1.innerHTML = "New Name";
+			td2.innerHTML = "New Age";
+			td3.innerHTML = "New Gender";
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			table.appendChild(tr);
+		}
+
+		function showDialog() {
+			alert("提交成功！");
+		}
+
+		function toggleVisibility() {
+			var elem = document.getElementById("myText");
+			if (elem.classList.contains("hidden")) {
+				elem.classList.remove("hidden");
+			} else {
+				elem.classList.add("hidden");
+			}
+		}
+
+		function showPosition(event) {
+			var posX = event.clientX;
+			var posY = event.clientY;
+			document.getElementById("posX").innerHTML = posX;
+			document.getElementById("posY").innerHTML = posY;
+		}
+
+		function addImage() {
+			var img = document.createElement("img");
+			img.setAttribute("src", "https://th.bing.com/th/id/R.0ad1b893b830605e533c77cc5711ca7d?rik=osZvmYdskSzCdg&riu=http%3a%2f%2fguangyuanol.cn%2fuploads%2fallimg%2f200227%2f19210J4O-4.jpg&ehk=25A1M6e542qTTKzMJi7%2bKGfCguTefjAFOJOp2Vf5f2U%3d&risl=&pid=ImgRaw&r=0");
+			document.body.appendChild(img);
+		}
+
+		function deleteImage() {
+			var imgs = document.getElementsByTagName("img");
+			var lastImg = imgs[imgs.length - 1];
+			lastImg.parentNode.removeChild(lastImg);
+		}
+	</script>
+</body>
+</html>
