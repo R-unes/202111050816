@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>显示当前日期和计算离放假的天数</title>
+</head>
+<body>
+	<h1>当前时间是:</h1>
+	<p id="datetime"></p>
+	<h1>距离放假还有:</h1>
+	<p id="countdown"></p>
+	<script>
+		var today = new Date();
+		var year = today.getFullYear();
+		var month = today.getMonth() + 1;
+		var date = today.getDate();
+		var day = today.getDay();
+		var weekDay = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+		var todayStr = year + '年' + month + '月' + date + '日 ' + weekDay[day];
+		document.getElementById('datetime').innerHTML = todayStr;
+		var holiday = new Date("July 16, " + year);
+		var countdown = Math.ceil((holiday - today) / (1000 * 60 * 60 * 24));
+		document.getElementById('countdown').innerHTML = countdown + '天';
+	</script>
+</body>
+</html>

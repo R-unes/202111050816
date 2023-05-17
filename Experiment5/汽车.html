@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>构造函数与原型混合法实现对象</title>
+</head>
+<body>
+	<h1>我的汽车：</h1>
+	<p>颜色： <span id="carColor"></span></p>
+	<p>型号： <span id="carType"></span></p>
+	<p>价格： <span id="carPrice"></span></p>
+	<button onclick="myCar.start()">启动</button>
+	<button onclick="myCar.stop()">停止</button>
+	<script>
+		function Car(color, type, price) {
+			this.color = color;
+			this.type = type;
+			this.price = price;
+		}
+
+		Car.prototype.start = function() {
+			console.log('汽车已启动！');
+		}
+
+		Car.prototype.stop = function() {
+			console.log('汽车已停止！');
+		}
+
+		var myCar = new Car('红色', '轿车', 200000);
+		document.getElementById('carColor').innerHTML = myCar.color;
+		document.getElementById('carType').innerHTML = myCar.type;
+		document.getElementById('carPrice').innerHTML = myCar.price;
+	</script>
+</body>
+</html>
