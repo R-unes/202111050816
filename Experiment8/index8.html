@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    
+    <style type="text/css">
+        .menu {width: 300px;}
+        .has_children {background: #555555; color: #ffffff; cursor: pointer;}
+        .highlight {color: #ffffff; background: green;}
+        .submenu {display: none;}
+        .submenu-item {background: #888888; padding: 5px;}
+    </style>
+    
+    <script>
+        $(function() {
+            $('.has_children').click(function() {
+                $(this).addClass('highlight');
+                $(this).children('.submenu').slideToggle();
+                $(this).siblings().removeClass('highlight');
+                $(this).siblings().children('.submenu').slideUp();
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul class="menu">
+        <li class="has_children">
+            <span>菜单1</span>
+            <ul class="submenu">
+                <li class="submenu-item">子菜单1</li>
+                <li class="submenu-item">子菜单2</li>
+                <li class="submenu-item">子菜单3</li>
+            </ul>
+        </li>
+        <li class="has_children">
+            <span>菜单2</span>
+            <ul class="submenu">
+                <li class="submenu-item">子菜单4</li>
+                <li class="submenu-item">子菜单5</li>
+            </ul>
+        </li>
+        <li class="has_children">
+            <span>菜单3</span>
+            <ul class="submenu">
+                <li class="submenu-item">子菜单6</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
